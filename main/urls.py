@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from user.views import ImagesViewSet
+from user.views import BlogViewSet,PhotoViewSet
 from rest_framework.routers import DefaultRouter
 from django.conf import settings
 from django.conf.urls.static import static
@@ -23,7 +23,10 @@ from django.conf.urls.static import static
 
 
 router = DefaultRouter()
-router.register(r'users', ImagesViewSet, basename='user')
+router.register(r'blog', BlogViewSet, basename='user')
+router.register(r'photo', PhotoViewSet, basename='user')
+# router.register(r'users1', PhotoViewSet1, basename='user')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
